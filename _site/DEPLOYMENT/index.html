@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Physics and Astronomy Club of IIT Madras">
+  <title>Deployment Guide for GitHub Pages | Horizon</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="/">Horizon</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+  <main class="main-content">
+    <article class="page">
+  <div class="container">
+    <header class="page-header">
+      <h1>Deployment Guide for GitHub Pages</h1>
+    </header>
+    <div class="page-content">
+      <h1 id="deployment-guide-for-github-pages">Deployment Guide for GitHub Pages</h1>
+
+<p>This guide walks you through deploying your TechClub website to GitHub Pages.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>A GitHub account</li>
+  <li>Git installed on your computer</li>
+</ul>
+
+<h2 id="step-1-create-a-github-repository">Step 1: Create a GitHub Repository</h2>
+
+<ol>
+  <li>Go to <a href="https://github.com">GitHub</a> and sign in</li>
+  <li>Click the “+” icon in the top right and select “New repository”</li>
+  <li>Name your repository (e.g., <code class="language-plaintext highlighter-rouge">techclub-website</code> or <code class="language-plaintext highlighter-rouge">yourusername.github.io</code>)</li>
+  <li>Choose “Public” visibility</li>
+  <li>Do NOT initialize with README (we already have one)</li>
+  <li>Click “Create repository”</li>
+</ol>
+
+<h2 id="step-2-update-configuration">Step 2: Update Configuration</h2>
+
+<p>Before pushing, update <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">title</span><span class="pi">:</span> <span class="s">Your Club Name</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">Your club description</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/techclub-website"</span>  <span class="c1"># Use "" if repository is named username.github.io</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://yourusername.github.io"</span>
+</code></pre></div></div>
+
+<p><strong>Important</strong>:</p>
+<ul>
+  <li>If your repository is named <code class="language-plaintext highlighter-rouge">username.github.io</code>, set <code class="language-plaintext highlighter-rouge">baseurl: ""</code></li>
+  <li>Otherwise, set <code class="language-plaintext highlighter-rouge">baseurl: "/repository-name"</code></li>
+</ul>
+
+<h2 id="step-3-push-to-github">Step 3: Push to GitHub</h2>
+
+<p>Open terminal in your project directory and run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Initial commit: TechClub website"</span>
+git branch <span class="nt">-M</span> main
+git remote add origin https://github.com/yourusername/repository-name.git
+git push <span class="nt">-u</span> origin main
+</code></pre></div></div>
+
+<h2 id="step-4-enable-github-pages">Step 4: Enable GitHub Pages</h2>
+
+<ol>
+  <li>Go to your repository on GitHub</li>
+  <li>Click “Settings” tab</li>
+  <li>Click “Pages” in the left sidebar</li>
+  <li>Under “Source”, select:
+    <ul>
+      <li>Source: <strong>Deploy from a branch</strong></li>
+      <li>Branch: <strong>main</strong></li>
+      <li>Folder: <strong>/ (root)</strong></li>
+    </ul>
+  </li>
+  <li>Click “Save”</li>
+</ol>
+
+<h2 id="step-5-wait-for-deployment">Step 5: Wait for Deployment</h2>
+
+<p>GitHub Pages will build your site automatically. This takes 1-3 minutes.</p>
+
+<p>You’ll see a notification at the top of the Pages settings with your site URL:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Your site is live at https://yourusername.github.io/repository-name/
+</code></pre></div></div>
+
+<h2 id="step-6-verify-deployment">Step 6: Verify Deployment</h2>
+
+<ol>
+  <li>Visit your site URL</li>
+  <li>Check that all pages load correctly</li>
+  <li>Test navigation between pages</li>
+  <li>Verify article pages work</li>
+</ol>
+
+<h2 id="customization-after-deployment">Customization After Deployment</h2>
+
+<h3 id="update-site-content">Update Site Content</h3>
+
+<p>Edit markdown files and push changes:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Update content"</span>
+git push
+</code></pre></div></div>
+
+<p>GitHub Pages will automatically rebuild your site.</p>
+
+<h3 id="add-new-articles">Add New Articles</h3>
+
+<ol>
+  <li>Create a new file in <code class="language-plaintext highlighter-rouge">articles/_posts/</code> with format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code></li>
+  <li>Add front matter and content</li>
+  <li>Commit and push</li>
+</ol>
+
+<h3 id="change-colors-and-styling">Change Colors and Styling</h3>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">assets/css/_variables.scss</code> and push changes.</p>
+
+<h2 id="using-a-custom-domain-optional">Using a Custom Domain (Optional)</h2>
+
+<h3 id="add-custom-domain">Add Custom Domain</h3>
+
+<ol>
+  <li>In GitHub Pages settings, enter your custom domain (e.g., <code class="language-plaintext highlighter-rouge">techclub.com</code>)</li>
+  <li>Create a <code class="language-plaintext highlighter-rouge">CNAME</code> file in your repository root:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>techclub.com
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="configure-dns">Configure DNS</h3>
+
+<p>Add these DNS records with your domain provider:</p>
+
+<p><strong>For apex domain (techclub.com):</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A     @     185.199.108.153
+A     @     185.199.109.153
+A     @     185.199.110.153
+A     @     185.199.111.153
+</code></pre></div></div>
+
+<p><strong>For www subdomain:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CNAME www   yourusername.github.io
+</code></pre></div></div>
+
+<h3 id="enable-https">Enable HTTPS</h3>
+
+<p>In GitHub Pages settings, check “Enforce HTTPS” (available after DNS propagates).</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="site-not-showing-up">Site Not Showing Up</h3>
+
+<ul>
+  <li>Wait 5-10 minutes for initial deployment</li>
+  <li>Check “Actions” tab for build errors</li>
+  <li>Verify <code class="language-plaintext highlighter-rouge">baseurl</code> and <code class="language-plaintext highlighter-rouge">url</code> in <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
+</ul>
+
+<h3 id="css-not-loading">CSS Not Loading</h3>
+
+<ul>
+  <li>Ensure <code class="language-plaintext highlighter-rouge">baseurl</code> in <code class="language-plaintext highlighter-rouge">_config.yml</code> matches your repository name</li>
+  <li>Clear browser cache</li>
+  <li>Check browser console for 404 errors</li>
+</ul>
+
+<h3 id="articles-not-appearing">Articles Not Appearing</h3>
+
+<ul>
+  <li>Verify file naming: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code></li>
+  <li>Check front matter is correct</li>
+  <li>Ensure files are in <code class="language-plaintext highlighter-rouge">articles/_posts/</code> directory</li>
+  <li>Date must not be in the future</li>
+</ul>
+
+<h3 id="navigation-links-broken">Navigation Links Broken</h3>
+
+<ul>
+  <li>Check that <code class="language-plaintext highlighter-rouge">baseurl</code> is correctly set in <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
+  <li>Verify all internal links use <code class="language-plaintext highlighter-rouge">/path</code></li>
+</ul>
+
+<h2 id="local-testing">Local Testing</h2>
+
+<p>To test locally before pushing:</p>
+
+<ol>
+  <li>Install Ruby and Bundler</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle install</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></li>
+  <li>Visit <code class="language-plaintext highlighter-rouge">http://localhost:4000</code></li>
+</ol>
+
+<h2 id="continuous-updates">Continuous Updates</h2>
+
+<p>Your workflow after deployment:</p>
+
+<ol>
+  <li>Edit files locally</li>
+  <li>Test changes (optional: use local Jekyll server)</li>
+  <li>Commit changes: <code class="language-plaintext highlighter-rouge">git commit -am "Description of changes"</code></li>
+  <li>Push to GitHub: <code class="language-plaintext highlighter-rouge">git push</code></li>
+  <li>Wait 1-2 minutes for automatic rebuild</li>
+</ol>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></li>
+  <li><a href="https://jekyllrb.com/docs/">Jekyll Documentation</a></li>
+  <li><a href="https://www.markdownguide.org/">Markdown Guide</a></li>
+</ul>
+
+<h2 id="support">Support</h2>
+
+<p>For issues specific to this template, check the README.md or open an issue on GitHub.</p>
+
+<p>For GitHub Pages issues, visit <a href="https://support.github.com/">GitHub Support</a>.</p>
+
+    </div>
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Horizon</h3>
+        <p>The Physics and Astronomy Club of IIT Madras</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/articles">Articles</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="mailto:contact@techclub.edu">Email</a></li>
+          <li><a href="https://github.com/techclub">GitHub</a></li>
+          <li><a href="https://linkedin.com/company/techclub">LinkedIn</a></li>
+          <li><a href="https://twitter.com/techclub">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Horizon. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

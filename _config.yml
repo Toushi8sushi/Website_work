@@ -1,0 +1,38 @@
+# Site settings
+title: Horizon
+description: The Physics and Astronomy Club of IIT Madras
+baseurl: ""
+url: "https://yourusername.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: /articles/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /articles/:year/:month/:day/:title/
+
+# Sass
+sass:
+  style: compressed
+  sass_dir: assets/css
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
