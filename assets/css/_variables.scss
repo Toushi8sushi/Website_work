@@ -1,29 +1,15 @@
-// Primary & Accent Colors red and black theme
-$color-primary: #e63333; // bright red for buttons, links, highlights
-$color-primary-dark: #b91c1c; // darker red for hover states
-$color-secondary: #f70000;
-$color-accent: #c92017;
+// Primary & Accent Colors (Blue)
+$color-primary: #3b82f6; // blue accents (buttons, links)
+$color-primary-dark: #2563eb; // darker blue for hover states
+$color-secondary: #60a5fa; // softer blue for secondary highlights
+$color-accent: #38bdf8; // lighter accent (icons, emphasis)
 
 // Text Colors
-$color-text: #f8fafc; // light gray/white for main text
-$color-text-light: #d1d5db; // slightly dimmer text
-$color-background: #0f0f0f; // deep black background
-$color-background-alt: #1a1a1a; // slightly lighter black for cards/sections
-$color-border: #272727; // subtle dark border 
-
-/* 
-// Primary & Accent Colors dark grey and white theme
-$color-primary: #ffffff; // white for buttons, links, highlights
-$color-primary-dark: #d1d5db; // light gray for hover states
-$color-secondary: #9ca3af; // softer gray for secondary accents
-$color-accent: #f3f4f6; // subtle highlight
-
-// Text Colors
-$color-text: #ffffff; // main text
-$color-text-light: #d1d5db; // secondary text / muted
-$color-background: #121212; // dark grey background (almost black, not harsh)
-$color-background-alt: #1e1e1e; // slightly lighter grey for cards/sections
-$color-border: #272727; // subtle border */
+$color-text: #f8fafc; // near-white for main text
+$color-text-light: #cbd5e1; // muted text
+$color-background: #0f172a; // very dark blue-grey (not pure black)
+$color-background-alt: #111827; // slightly lighter for cards/sections
+$color-border: #1f2933; // subtle dark border
 
 // Status Colors
 $color-success: #10b981; // green for success
