@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,72 +8,78 @@
   <title>Modern Web Development Best Practices for 2025 | Horizon</title>
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
+
 <body>
   <header class="site-header">
-  <nav class="navbar">
-    <div class="container">
-      <div class="nav-brand">
-        <a href="/">Horizon</a>
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-brand">
+          <a href="/">Horizon</a>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/articles">Articles</a></li>
+          <li><a href="/astrophotography">Astrophotography</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/contact">Contact</a></li>
+
+        </ul>
       </div>
-
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/team">Team</a></li>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/articles">Articles</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
+    </nav>
+  </header>
 
   <main class="main-content">
     <article class="post">
-  <div class="container">
-    <header class="post-header">
-      <h1>Modern Web Development Best Practices for 2025</h1>
-      <div class="post-meta">
-        <span class="author">By Sam Chen</span>
-        <span class="date">December 20, 2024</span>
-      </div>
-      
-        <div class="post-tags">
-          
+      <div class="container">
+        <header class="post-header">
+          <h1>Modern Web Development Best Practices for 2025</h1>
+          <div class="post-meta">
+            <span class="author">By Sam Chen</span>
+            <span class="date">December 20, 2024</span>
+          </div>
+
+          <div class="post-tags">
+
             <span class="tag">web-development</span>
-          
+
             <span class="tag">best-practices</span>
-          
+
             <span class="tag">frontend</span>
-          
+
             <span class="tag">backend</span>
-          
-        </div>
-      
-    </header>
 
-    <div class="post-content">
-      <p>Web development evolves rapidly, and keeping up with best practices is essential for building maintainable, performant, and secure applications. This article covers key best practices every web developer should follow in 2025.</p>
+          </div>
 
-<h2 id="frontend-best-practices">Frontend Best Practices</h2>
+        </header>
 
-<h3 id="1-mobile-first-responsive-design">1. Mobile-First Responsive Design</h3>
+        <div class="post-content">
+          <p>Web development evolves rapidly, and keeping up with best practices is essential for building maintainable,
+            performant, and secure applications. This article covers key best practices every web developer should
+            follow in 2025.</p>
 
-<p>Always design for mobile devices first, then scale up to larger screens. This approach ensures:</p>
-<ul>
-  <li>Better user experience on mobile devices</li>
-  <li>Faster initial development</li>
-  <li>Progressive enhancement naturally</li>
-</ul>
+          <h2 id="frontend-best-practices">Frontend Best Practices</h2>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Mobile-first approach */</span>
+          <h3 id="1-mobile-first-responsive-design">1. Mobile-First Responsive Design</h3>
+
+          <p>Always design for mobile devices first, then scale up to larger screens. This approach ensures:</p>
+          <ul>
+            <li>Better user experience on mobile devices</li>
+            <li>Faster initial development</li>
+            <li>Progressive enhancement naturally</li>
+          </ul>
+
+          <div class="language-css highlighter-rouge">
+            <div class="highlight">
+              <pre class="highlight"><code><span class="c">/* Mobile-first approach */</span>
 <span class="nc">.container</span> <span class="p">{</span>
   <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
   <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
@@ -92,13 +99,17 @@
     <span class="nl">max-width</span><span class="p">:</span> <span class="m">960px</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+            </div>
+          </div>
 
-<h3 id="2-semantic-html">2. Semantic HTML</h3>
+          <h3 id="2-semantic-html">2. Semantic HTML</h3>
 
-<p>Use appropriate HTML elements for better accessibility and SEO:</p>
+          <p>Use appropriate HTML elements for better accessibility and SEO:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Good: Semantic structure --&gt;</span>
+          <div class="language-html highlighter-rouge">
+            <div class="highlight">
+              <pre class="highlight"><code><span class="c">&lt;!-- Good: Semantic structure --&gt;</span>
 <span class="nt">&lt;article&gt;</span>
   <span class="nt">&lt;header&gt;</span>
     <span class="nt">&lt;h1&gt;</span>Article Title<span class="nt">&lt;/h1&gt;</span>
@@ -114,60 +125,68 @@
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Article Title<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
+</code></pre>
+            </div>
+          </div>
 
-<h3 id="3-performance-optimization">3. Performance Optimization</h3>
+          <h3 id="3-performance-optimization">3. Performance Optimization</h3>
 
-<ul>
-  <li><strong>Minimize HTTP requests</strong>: Bundle and minify CSS/JS files</li>
-  <li><strong>Lazy load images</strong>: Load images only when they enter viewport</li>
-  <li><strong>Use CDNs</strong>: Serve static assets from content delivery networks</li>
-  <li><strong>Implement caching</strong>: Leverage browser caching for static resources</li>
-  <li><strong>Optimize images</strong>: Use modern formats like WebP</li>
-</ul>
+          <ul>
+            <li><strong>Minimize HTTP requests</strong>: Bundle and minify CSS/JS files</li>
+            <li><strong>Lazy load images</strong>: Load images only when they enter viewport</li>
+            <li><strong>Use CDNs</strong>: Serve static assets from content delivery networks</li>
+            <li><strong>Implement caching</strong>: Leverage browser caching for static resources</li>
+            <li><strong>Optimize images</strong>: Use modern formats like WebP</li>
+          </ul>
 
-<h3 id="4-accessibility">4. Accessibility</h3>
+          <h3 id="4-accessibility">4. Accessibility</h3>
 
-<p>Make your websites usable for everyone:</p>
-<ul>
-  <li>Provide alt text for images</li>
-  <li>Use proper heading hierarchy</li>
-  <li>Ensure keyboard navigation works</li>
-  <li>Maintain sufficient color contrast</li>
-  <li>Test with screen readers</li>
-</ul>
+          <p>Make your websites usable for everyone:</p>
+          <ul>
+            <li>Provide alt text for images</li>
+            <li>Use proper heading hierarchy</li>
+            <li>Ensure keyboard navigation works</li>
+            <li>Maintain sufficient color contrast</li>
+            <li>Test with screen readers</li>
+          </ul>
 
-<h2 id="backend-best-practices">Backend Best Practices</h2>
+          <h2 id="backend-best-practices">Backend Best Practices</h2>
 
-<h3 id="1-restful-api-design">1. RESTful API Design</h3>
+          <h3 id="1-restful-api-design">1. RESTful API Design</h3>
 
-<p>Follow REST principles for consistent, predictable APIs:</p>
+          <p>Follow REST principles for consistent, predictable APIs:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET    /api/users       - List all users
+          <div class="language-plaintext highlighter-rouge">
+            <div class="highlight">
+              <pre class="highlight"><code>GET    /api/users       - List all users
 GET    /api/users/:id   - Get specific user
 POST   /api/users       - Create new user
 PUT    /api/users/:id   - Update user
 DELETE /api/users/:id   - Delete user
-</code></pre></div></div>
+</code></pre>
+            </div>
+          </div>
 
-<h3 id="2-security">2. Security</h3>
+          <h3 id="2-security">2. Security</h3>
 
-<p>Implement these security measures:</p>
+          <p>Implement these security measures:</p>
 
-<ul>
-  <li><strong>Use HTTPS</strong>: Always encrypt data in transit</li>
-  <li><strong>Validate input</strong>: Never trust user input</li>
-  <li><strong>Sanitize data</strong>: Prevent XSS attacks</li>
-  <li><strong>Use parameterized queries</strong>: Prevent SQL injection</li>
-  <li><strong>Implement rate limiting</strong>: Protect against DDoS</li>
-  <li><strong>Keep dependencies updated</strong>: Patch security vulnerabilities</li>
-</ul>
+          <ul>
+            <li><strong>Use HTTPS</strong>: Always encrypt data in transit</li>
+            <li><strong>Validate input</strong>: Never trust user input</li>
+            <li><strong>Sanitize data</strong>: Prevent XSS attacks</li>
+            <li><strong>Use parameterized queries</strong>: Prevent SQL injection</li>
+            <li><strong>Implement rate limiting</strong>: Protect against DDoS</li>
+            <li><strong>Keep dependencies updated</strong>: Patch security vulnerabilities</li>
+          </ul>
 
-<h3 id="3-error-handling">3. Error Handling</h3>
+          <h3 id="3-error-handling">3. Error Handling</h3>
 
-<p>Provide meaningful error messages without exposing sensitive information:</p>
+          <p>Provide meaningful error messages without exposing sensitive information:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good: Helpful but secure</span>
+          <div class="language-javascript highlighter-rouge">
+            <div class="highlight">
+              <pre class="highlight"><code><span class="c1">// Good: Helpful but secure</span>
 <span class="p">{</span>
   <span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Invalid credentials</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">message</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Email or password is incorrect</span><span class="dl">"</span>
@@ -178,144 +197,151 @@ DELETE /api/users/:id   - Delete user
   <span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">User not found in database</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">sql</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SELECT * FROM users WHERE email = 'user@example.com'</span><span class="dl">"</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+            </div>
+          </div>
 
-<h3 id="4-database-optimization">4. Database Optimization</h3>
+          <h3 id="4-database-optimization">4. Database Optimization</h3>
 
-<ul>
-  <li>Use indexes for frequently queried fields</li>
-  <li>Avoid N+1 queries</li>
-  <li>Implement connection pooling</li>
-  <li>Use appropriate data types</li>
-  <li>Regular backups</li>
-</ul>
+          <ul>
+            <li>Use indexes for frequently queried fields</li>
+            <li>Avoid N+1 queries</li>
+            <li>Implement connection pooling</li>
+            <li>Use appropriate data types</li>
+            <li>Regular backups</li>
+          </ul>
 
-<h2 id="development-workflow">Development Workflow</h2>
+          <h2 id="development-workflow">Development Workflow</h2>
 
-<h3 id="version-control">Version Control</h3>
+          <h3 id="version-control">Version Control</h3>
 
-<p>Use Git effectively:</p>
-<ul>
-  <li>Write descriptive commit messages</li>
-  <li>Create feature branches</li>
-  <li>Use pull requests for code review</li>
-  <li>Keep commits atomic and focused</li>
-  <li>Tag releases</li>
-</ul>
+          <p>Use Git effectively:</p>
+          <ul>
+            <li>Write descriptive commit messages</li>
+            <li>Create feature branches</li>
+            <li>Use pull requests for code review</li>
+            <li>Keep commits atomic and focused</li>
+            <li>Tag releases</li>
+          </ul>
 
-<h3 id="code-quality">Code Quality</h3>
+          <h3 id="code-quality">Code Quality</h3>
 
-<ul>
-  <li><strong>Follow style guides</strong>: Maintain consistent code style</li>
-  <li><strong>Write tests</strong>: Unit, integration, and end-to-end tests</li>
-  <li><strong>Code reviews</strong>: Learn from peers and catch bugs early</li>
-  <li><strong>Use linters</strong>: Catch errors before runtime</li>
-  <li><strong>Document code</strong>: Help future developers understand your work</li>
-</ul>
+          <ul>
+            <li><strong>Follow style guides</strong>: Maintain consistent code style</li>
+            <li><strong>Write tests</strong>: Unit, integration, and end-to-end tests</li>
+            <li><strong>Code reviews</strong>: Learn from peers and catch bugs early</li>
+            <li><strong>Use linters</strong>: Catch errors before runtime</li>
+            <li><strong>Document code</strong>: Help future developers understand your work</li>
+          </ul>
 
-<h3 id="continuous-integrationdeployment">Continuous Integration/Deployment</h3>
+          <h3 id="continuous-integrationdeployment">Continuous Integration/Deployment</h3>
 
-<p>Automate your workflow:</p>
-<ul>
-  <li>Run tests automatically on push</li>
-  <li>Automate deployment process</li>
-  <li>Use staging environments</li>
-  <li>Monitor production applications</li>
-  <li>Set up error tracking</li>
-</ul>
+          <p>Automate your workflow:</p>
+          <ul>
+            <li>Run tests automatically on push</li>
+            <li>Automate deployment process</li>
+            <li>Use staging environments</li>
+            <li>Monitor production applications</li>
+            <li>Set up error tracking</li>
+          </ul>
 
-<h2 id="modern-tools-and-technologies">Modern Tools and Technologies</h2>
+          <h2 id="modern-tools-and-technologies">Modern Tools and Technologies</h2>
 
-<h3 id="essential-tools">Essential Tools</h3>
+          <h3 id="essential-tools">Essential Tools</h3>
 
-<ul>
-  <li><strong>Version Control</strong>: Git and GitHub/GitLab</li>
-  <li><strong>Package Managers</strong>: npm, yarn, or pnpm</li>
-  <li><strong>Build Tools</strong>: Vite, webpack, or esbuild</li>
-  <li><strong>Testing</strong>: Jest, Vitest, Cypress</li>
-  <li><strong>Deployment</strong>: Vercel, Netlify, or AWS</li>
-</ul>
+          <ul>
+            <li><strong>Version Control</strong>: Git and GitHub/GitLab</li>
+            <li><strong>Package Managers</strong>: npm, yarn, or pnpm</li>
+            <li><strong>Build Tools</strong>: Vite, webpack, or esbuild</li>
+            <li><strong>Testing</strong>: Jest, Vitest, Cypress</li>
+            <li><strong>Deployment</strong>: Vercel, Netlify, or AWS</li>
+          </ul>
 
-<h3 id="recommended-learning">Recommended Learning</h3>
+          <h3 id="recommended-learning">Recommended Learning</h3>
 
-<p>Stay current with:</p>
-<ul>
-  <li>Web Vitals and Core Web Vitals</li>
-  <li>Progressive Web Apps (PWAs)</li>
-  <li>Web Components</li>
-  <li>GraphQL</li>
-  <li>Serverless functions</li>
-  <li>Container technologies (Docker)</li>
-</ul>
+          <p>Stay current with:</p>
+          <ul>
+            <li>Web Vitals and Core Web Vitals</li>
+            <li>Progressive Web Apps (PWAs)</li>
+            <li>Web Components</li>
+            <li>GraphQL</li>
+            <li>Serverless functions</li>
+            <li>Container technologies (Docker)</li>
+          </ul>
 
-<h2 id="documentation">Documentation</h2>
+          <h2 id="documentation">Documentation</h2>
 
-<p>Good documentation includes:</p>
+          <p>Good documentation includes:</p>
 
-<ol>
-  <li><strong>README</strong>: Project overview, setup instructions, usage</li>
-  <li><strong>API Documentation</strong>: Endpoint details, parameters, responses</li>
-  <li><strong>Code Comments</strong>: Explain complex logic</li>
-  <li><strong>Architecture Docs</strong>: System design and decisions</li>
-  <li><strong>Contributing Guidelines</strong>: How others can contribute</li>
-</ol>
+          <ol>
+            <li><strong>README</strong>: Project overview, setup instructions, usage</li>
+            <li><strong>API Documentation</strong>: Endpoint details, parameters, responses</li>
+            <li><strong>Code Comments</strong>: Explain complex logic</li>
+            <li><strong>Architecture Docs</strong>: System design and decisions</li>
+            <li><strong>Contributing Guidelines</strong>: How others can contribute</li>
+          </ol>
 
-<h2 id="conclusion">Conclusion</h2>
+          <h2 id="conclusion">Conclusion</h2>
 
-<p>Web development best practices ensure your applications are maintainable, performant, and secure. While technologies change, principles like semantic markup, accessibility, security, and clean code remain constant.</p>
+          <p>Web development best practices ensure your applications are maintainable, performant, and secure. While
+            technologies change, principles like semantic markup, accessibility, security, and clean code remain
+            constant.</p>
 
-<p>Keep learning, stay curious, and always prioritize user experience. The web is constantly evolving, and so should your skills.</p>
+          <p>Keep learning, stay curious, and always prioritize user experience. The web is constantly evolving, and so
+            should your skills.</p>
 
-<hr />
+          <hr />
 
-<p><em>Want to learn more about web development? Join our upcoming workshops or check out our project repository on GitHub!</em></p>
+          <p><em>Want to learn more about web development? Join our upcoming workshops or check out our project
+              repository on GitHub!</em></p>
 
-    </div>
+        </div>
 
-    <footer class="post-footer">
-      <a href="/articles" class="back-link">← Back to Articles</a>
-    </footer>
-  </div>
-</article>
+        <footer class="post-footer">
+          <a href="/articles" class="back-link">← Back to Articles</a>
+        </footer>
+      </div>
+    </article>
 
   </main>
 
   <footer class="site-footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Horizon</h3>
-        <p>The Physics and Astronomy Club of IIT Madras</p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Horizon</h3>
+          <p>The Physics and Astronomy Club of IIT Madras</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/team">Team</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/articles">Articles</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="mailto:contact@techclub.edu">Email</a></li>
+            <li><a href="https://github.com/techclub">GitHub</a></li>
+            <li><a href="https://linkedin.com/company/techclub">LinkedIn</a></li>
+            <li><a href="https://twitter.com/techclub">Twitter</a></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/team">Team</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/articles">Articles</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h3>Connect</h3>
-        <ul>
-          <li><a href="mailto:contact@techclub.edu">Email</a></li>
-          <li><a href="https://github.com/techclub">GitHub</a></li>
-          <li><a href="https://linkedin.com/company/techclub">LinkedIn</a></li>
-          <li><a href="https://twitter.com/techclub">Twitter</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Horizon. All rights reserved.</p>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2025 Horizon. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 
   <script src="/assets/js/main.js"></script>
 </body>
+
 </html>

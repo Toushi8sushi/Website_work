@@ -5,8 +5,8 @@ title: Home
 
 <section class="hero">
   <div class="container">
-    <h1>Welcome to TechClub</h1>
-    <p class="hero-tagline">Building tomorrow's innovators through hands-on technical projects and collaborative learning</p>
+    <h1>Welcome to Horizon's Website</h1>
+    <p class="hero-tagline">I love Andhikadai</p>
     <div class="hero-actions">
       <a href="{{ '/about' | relative_url }}" class="btn btn-primary">Learn More</a>
       <a href="{{ '/articles' | relative_url }}" class="btn btn-secondary">Read Articles</a>

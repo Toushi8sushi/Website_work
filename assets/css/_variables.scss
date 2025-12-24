@@ -1,17 +1,33 @@
-// Colors
-$color-primary: #2563eb;
-$color-primary-dark: #1e40af;
-$color-secondary: #475569;
-$color-accent: #0ea5e9;
+// Primary & Accent Colors red and black theme
+$color-primary: #e63333; // bright red for buttons, links, highlights
+$color-primary-dark: #b91c1c; // darker red for hover states
+$color-secondary: #f70000;
+$color-accent: #c92017;
 
-$color-text: #1e293b;
-$color-text-light: #64748b;
-$color-background: #ffffff;
-$color-background-alt: #f8fafc;
-$color-border: #e2e8f0;
+// Text Colors
+$color-text: #f8fafc; // light gray/white for main text
+$color-text-light: #d1d5db; // slightly dimmer text
+$color-background: #0f0f0f; // deep black background
+$color-background-alt: #1a1a1a; // slightly lighter black for cards/sections
+$color-border: #272727; // subtle dark border 
 
-$color-success: #10b981;
-$color-warning: #f59e0b;
+/* 
+// Primary & Accent Colors dark grey and white theme
+$color-primary: #ffffff; // white for buttons, links, highlights
+$color-primary-dark: #d1d5db; // light gray for hover states
+$color-secondary: #9ca3af; // softer gray for secondary accents
+$color-accent: #f3f4f6; // subtle highlight
+
+// Text Colors
+$color-text: #ffffff; // main text
+$color-text-light: #d1d5db; // secondary text / muted
+$color-background: #121212; // dark grey background (almost black, not harsh)
+$color-background-alt: #1e1e1e; // slightly lighter grey for cards/sections
+$color-border: #272727; // subtle border */
+
+// Status Colors
+$color-success: #10b981; // green for success
+$color-warning: #f59e0b; // orange for warnings
 $color-error: #ef4444;
 
 // Typography
@@ -36,7 +52,7 @@ $spacing-unit: 8px;
 $spacing-xs: $spacing-unit;
 $spacing-sm: $spacing-unit * 2;
 $spacing-md: $spacing-unit * 3;
-$spacing-lg: $spacing-unit * 4;
+$spacing-lg: $spacing-unit * 1;
 $spacing-xl: $spacing-unit * 6;
 $spacing-2xl: $spacing-unit * 8;
 
