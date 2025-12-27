@@ -241,6 +241,19 @@
   }
 }
 
+.footer-brand {
+  .footer-logo {
+    display: inline-block;
+    margin-bottom: $spacing-md;
+
+    img {
+      height: 36px; // 👈 control size here
+      width: auto;
+      display: block;
+    }
+  }
+}
+
 .footer-bottom {
   padding-top: $spacing-lg;
   border-top: 1px solid $color-border;

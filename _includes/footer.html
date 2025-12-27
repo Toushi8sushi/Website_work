@@ -1,8 +1,10 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-content">
-      <div class="footer-section">
-        <h3>{{ site.title }}</h3>
+      <div class="footer-section footer-brand">
+        <a href="{{ '/' | relative_url }}" class="footer-logo">
+          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }} logo">
+        </a>
         <p>{{ site.description }}</p>
       </div>
 
@@ -72,9 +74,8 @@
           </li>
         </ul>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
-      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
     </div>
 </footer>
