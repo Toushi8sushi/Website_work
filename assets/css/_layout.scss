@@ -34,34 +34,38 @@
 }
 
 .nav-brand {
-  a {
+  .nav-logo {
     display: flex;
     align-items: center;
-    text-decoration: none;
 
-    // If text is still present, keep font styling
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
-    color: $color-text;
+    svg {
+      height: 40px;
+      width: auto;
+      flex-shrink: 0;
+      display: block;
+      transition: filter 0.3s ease;
 
-    &:hover {
-      color: $color-primary;
-      text-decoration: none;
+      path {
+        fill: $color-text;
+        transition: fill 0.25s ease, transform 0.25s ease;
+        transform-origin: center;
+      }
     }
 
-    // Logo image inside link
-    img {
-      height: 40px; // adjust size as needed
-      width: auto;
-      transition: transform 0.3s ease, filter 0.3s ease;
+    &:hover svg {
+      filter: drop-shadow(0 0 4px rgba($color-primary, 0.3));
+    }
 
-      &:hover {
-        filter: brightness(1.2); // brightens on hover
-        transform: scale(1.05); // slight zoom
-      }
+    &:hover svg path {
+      fill: $color-primary;
+      transform: scale(1.03);
     }
   }
 }
+
+
+
+
 
 .nav-toggle {
   display: none;
