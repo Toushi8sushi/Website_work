@@ -19,9 +19,11 @@ We'd love to hear from you! Whether you're interested in joining the club, have 
 
 Stay updated with our latest events, articles, and announcements:
 
+- **Instagram**: [@HorizonIITM](https://www.instagram.com/horizoniitm/)
 - **GitHub**: [github.com/HorizonIITM](https://github.com/HorizonIITM)
 - **LinkedIn**: [linkedin.com/company/techclub](https://www.linkedin.com/company/horizon-cfi-iitm/)
 - **YouTube**: [@HorizonIITM](https://www.youtube.com/@HorizonIITM)
+
 
 **Address**
 Centre for Innovation, Indian Institute Of Technology, Chennai, Tamil Nadu 600036

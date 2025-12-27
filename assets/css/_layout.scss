@@ -192,11 +192,52 @@
 
     a {
       color: $color-text-light;
+      text-decoration: none;
+      transition: color 0.3s ease;
 
       &:hover {
         color: $color-primary;
       }
     }
+  }
+}
+
+.footer-section.social {
+  ul a {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    .icon {
+      width: 14px;
+      height: 14px;
+      display: block;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+  }
+
+  //adding colours to the logos when you hover over them
+  // this one is applied to instagram class but in the footer.html it is defined as icon instagram
+  // icon is a class and so is instagram, it belongs to both classes
+  a:hover .instagram {
+    color: #e1306c;
+  }
+
+  a:hover .email {
+    color: #f7f7f7;
+  }
+
+  a:hover .youtube {
+    color: #ff0000;
+  }
+
+  a:hover .github {
+    color: #ffffff;
+  }
+
+  a:hover .linkedin {
+    color: #0a66c2;
   }
 }
 
