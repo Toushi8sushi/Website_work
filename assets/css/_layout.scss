@@ -4,13 +4,13 @@
   margin: 0 auto;
   padding: 0 $spacing-md;
 
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: #{$breakpoint-md}) {
     padding: 0 $spacing-lg;
   }
 }
 
 .main-content {
-  min-height: calc(100vh - $header-height - 200px);
+  min-height: calc(100vh - #{$header-height} - 200px);
 }
 
 .site-header {
