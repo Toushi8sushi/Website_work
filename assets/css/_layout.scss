@@ -63,10 +63,6 @@
   }
 }
 
-
-
-
-
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -177,6 +173,7 @@
   h3 {
     font-size: $font-size-lg;
     margin-bottom: $spacing-md;
+    color: $color-primary;
   }
 
   p {

@@ -37,6 +37,7 @@
 
     h1 {
       margin-bottom: 0;
+      color: $color-page-title;
     }
   }
 
@@ -46,10 +47,12 @@
     h2 {
       margin-top: $spacing-xl;
       padding-top: $spacing-md;
+      color: $color-page-title;
     }
 
     h3 {
       margin-top: $spacing-lg;
+      color: $color-page-title;
     }
   }
 }
