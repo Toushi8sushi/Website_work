@@ -118,6 +118,7 @@
     li {
       width: 100%;
       border-bottom: 1px solid $color-border;
+      list-style: none;
 
       &:last-child {
         border-bottom: none;
