@@ -1,27 +1,51 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
+  const navLogo = document.querySelector('.nav-logo'); // logo click also toggles
 
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', function() {
-      navToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
-    });
+  if (!navMenu || !navToggle) return;
 
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
-        navToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-      });
-    });
+  function toggleMenu() {
+    const isActive = navMenu.classList.toggle('active');
+    navToggle.classList.toggle('active');
+
+    // Lock page scroll when menu is open
+    document.body.style.overflow = isActive ? 'hidden' : 'auto';
   }
 
-  document.addEventListener('click', function(event) {
-    const isClickInsideNav = navToggle.contains(event.target) || navMenu.contains(event.target);
-    if (!isClickInsideNav && navMenu.classList.contains('active')) {
-      navToggle.classList.remove('active');
+  // Toggle by hamburger
+  navToggle.addEventListener('click', toggleMenu);
+
+  // Toggle by logo
+  if (navLogo) {
+    navLogo.addEventListener('click', toggleMenu);
+  }
+
+  // Close menu when clicking a link
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
       navMenu.classList.remove('active');
+      navToggle.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+  });
+
+  // Close menu if clicking outside
+  document.addEventListener('click', (event) => {
+    const clickInside = navMenu.contains(event.target) || navToggle.contains(event.target) || navLogo.contains(event.target);
+    if (!clickInside && navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+      navToggle.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Reset menu on resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > parseInt(getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-md'))) {
+      navMenu.classList.remove('active');
+      navToggle.classList.remove('active');
+      document.body.style.overflow = 'auto';
     }
   });
 });

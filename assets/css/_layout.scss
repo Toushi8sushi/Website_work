@@ -13,47 +13,48 @@
   min-height: calc(100vh - #{$header-height} - 200px);
 }
 
+/* --- Header --- */
 .site-header {
-  background-color: $color-background;
-  border-bottom: 1px solid $color-border;
   position: sticky;
   top: 0;
+  width: 100%;
+  max-width: 100vw;
   z-index: 1000;
+  background-color: $color-background;
+  border-bottom: 1px solid $color-border;
   box-shadow: $shadow-sm;
+  overflow-x: hidden;
 }
 
+/* --- Navbar row --- */
 .navbar {
   height: $header-height;
 
   .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     height: 100%;
   }
 }
 
+/* --- Brand / Logo --- */
 .nav-brand {
+  display: flex;
+  align-items: center;
+
   .nav-logo {
-    display: flex;
-    align-items: center;
+    cursor: pointer;
 
     svg {
       height: 40px;
       width: auto;
-      flex-shrink: 0;
-      display: block;
-      transition: filter 0.3s ease;
 
       path {
         fill: $color-text;
         transition: fill 0.25s ease, transform 0.25s ease;
         transform-origin: center;
       }
-    }
-
-    &:hover svg {
-      filter: drop-shadow(0 0 4px rgba($color-primary, 0.3));
     }
 
     &:hover svg path {
@@ -80,7 +81,7 @@
     width: 24px;
     height: 2px;
     background-color: $color-text;
-    transition: all $transition-fast;
+    transition: all 0.25s ease;
   }
 
   &.active {
@@ -98,62 +99,115 @@
   }
 }
 
-.nav-menu {
-  display: flex;
-  gap: $spacing-lg;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  @media (max-width: $breakpoint-md) {
-    position: absolute;
-    top: $header-height;
+/* --- Mobile nav-menu --- */
+@media (max-width: $breakpoint-md) {
+  .nav-menu {
+    position: fixed;
+    top: $header-height; // menu starts below header
     left: 0;
-    right: 0;
+    width: 100vw;
+    height: calc(100vh - #{$header-height}); // full viewport minus header
+    background-color: $color-background;
     flex-direction: column;
     gap: 0;
-    background-color: $color-background;
-    border-bottom: 1px solid $color-border;
-    box-shadow: $shadow-md;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height $transition-base;
+    display: none; // hidden by default
+    overflow-y: auto; // scroll only when active
+    overflow-x: hidden;
+    z-index: 2000;
 
-    &.active {
-      max-height: 400px;
-    }
-  }
-
-  li {
-    margin: 0;
-
-    @media (max-width: $breakpoint-md) {
+    li {
+      width: 100%;
       border-bottom: 1px solid $color-border;
 
       &:last-child {
         border-bottom: none;
       }
     }
-  }
 
-  a {
-    display: block;
-    padding: $spacing-xs $spacing-sm;
-    color: $color-text;
-    font-weight: $font-weight-medium;
-    text-decoration: none;
-    transition: color $transition-fast;
-
-    @media (max-width: $breakpoint-md) {
+    a {
+      display: block;
+      width: 100%;
       padding: $spacing-md;
+      color: $color-text;
+      font-weight: $font-weight-medium;
+      text-decoration: none;
+
+      &:hover,
+      &:focus-visible {
+        color: $color-primary;
+        background-color: rgba($color-primary, 0.08);
+      }
     }
 
-    &:hover {
-      color: $color-primary;
-      text-decoration: none;
+    &.active {
+      display: flex; // menu visible
+    }
+
+    /* optional scrollbar styling */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba($color-primary, 0.3);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
     }
   }
 }
+
+//nav-bar on desktop size browsers, not on phone basically 
+@media (min-width: #{$breakpoint-md}) {
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    /* ✅ centers all children vertically */
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row;
+    gap: $spacing-lg;
+    align-items: center;
+    /* ✅ centers list items vertically */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: auto;
+
+    li {
+      width: auto;
+      border-bottom: none;
+    }
+
+    a {
+      display: inline-block;
+      padding: $spacing-xs $spacing-sm;
+      /* adjust as needed */
+      text-decoration: none;
+      font-weight: $font-weight-medium;
+      color: $color-text;
+
+      &:hover,
+      &:focus-visible {
+        color: $color-primary;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+}
+
+
+
 
 .site-footer {
   background-color: $color-background-alt;
