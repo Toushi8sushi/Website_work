@@ -4,66 +4,49 @@ title: Events
 ---
 
 ## Upcoming Events
+<div class="events-grid">
+  {% for event in site.events_2025_2026 %}
+  <div class="event-card"
+       data-title="{{ event.title }}"
+       data-content="{{ event.content | strip_html | escape }}"
+       data-youtube="{{ event.youtube }}"
+       tabindex="0">
+      
+    <img src="{{ event.poster | relative_url }}" alt="{{ event.title }} poster" />
 
-<div class="event-card">
-  <div class="event-date">
-    <span class="month">Jan</span>
-    <span class="day">15</span>
+    <div class="event-card__content">
+      <h3>{{ event.title }}</h3>
+      <p>{{ event.excerpt | strip_html | truncate: 100 }}</p>
+      <p class="for_click">Click to read more...</p>
+    </div>
+
+    <div class="event-card__full-content" hidden>
+      {{ event.content }}
+    </div>
   </div>
-  <div class="event-details">
-    <h3>Web Development Workshop</h3>
-    <p class="event-meta">3:00 PM - 5:00 PM | Computer Lab A</p>
-    <p>Learn modern web development with HTML, CSS, and JavaScript. Build your first responsive website from scratch.</p>
-  </div>
+  {% endfor %}
 </div>
 
-<div class="event-card">
-  <div class="event-date">
-    <span class="month">Jan</span>
-    <span class="day">28</span>
+<div class="event-modal" id="eventModal">
+  <div class="event-modal__overlay"></div>
+
+  <div class="event-modal__box">
+  <div class="event-modal__header">
+    <h2 id="modalTitle"></h2>
+    <button class="event-modal__close">&times;</button>
   </div>
-  <div class="event-details">
-    <h3>Machine Learning Fundamentals</h3>
-    <p class="event-meta">4:00 PM - 6:00 PM | Auditorium</p>
-    <p>Introduction to machine learning concepts, algorithms, and practical applications using Python and scikit-learn.</p>
-  </div>
+
+  <div id="modalContent"></div>
+
+  <a id="modalYoutube" target="_blank" class="event-modal__youtube" rel="noopener">
+    <span>Watch on YouTube</span>
+    <svg class="event-modal__youtube-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5V8.5L15.8 12l-6.2 3.5Z"/>
+    </svg>
+  </a>
+
 </div>
 
-<div class="event-card">
-  <div class="event-date">
-    <span class="month">Feb</span>
-    <span class="day">10</span>
-  </div>
-  <div class="event-details">
-    <h3>Winter Hackathon 2025</h3>
-    <p class="event-meta">9:00 AM - 9:00 PM | Tech Building</p>
-    <p>24-hour hackathon focused on building solutions for social good. Form teams, code, and compete for prizes!</p>
-  </div>
 </div>
 
 ## Past Events
-
-### 2024
-
-**December: Git and GitHub Workshop**
-Hands-on session covering version control basics, collaborative workflows, and open source contribution.
-
-**November: Tech Talk Series - Cloud Computing**
-Industry professional discussed cloud architecture, DevOps practices, and career paths in cloud engineering.
-
-**October: Fall Hackathon 2024**
-48-hour hackathon with 80+ participants building innovative projects across web, mobile, and hardware categories.
-
-**September: Python for Beginners**
-Introductory workshop for first-year students covering Python fundamentals and practical programming exercises.
-
-**August: Welcome Week Tech Fair**
-Showcased club projects, recruited new members, and demonstrated various technical domains students can explore.
-
-## Event Photos and Recaps
-
-Check out our [articles section]({{ '/articles' | relative_url }}) for detailed recaps, photos, and key takeaways from our past events.
-
-## Want to Present or Sponsor?
-
-If you're interested in giving a tech talk, conducting a workshop, or sponsoring our events, please [contact us]({{ '/contact' | relative_url }}). We're always looking for opportunities to bring valuable experiences to our members.
