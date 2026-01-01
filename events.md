@@ -1,9 +1,8 @@
 ---
 layout: page
-title: Events
+title: Event Horizon
 ---
 
-## Upcoming Events
 <div class="events-grid">
   {% for event in site.events_2025_2026 %}
   <div class="event-card"
@@ -12,13 +11,14 @@ title: Events
        data-youtube="{{ event.youtube }}"
        tabindex="0">
       
-    <img src="{{ event.poster | relative_url }}" alt="{{ event.title }} poster" />
+    <img src="{{ event.poster | relative_url }}" alt="{{ event.title }} poster"/></img>
 
     <div class="event-card__content">
-      <h3>{{ event.title }}</h3>
-      <p>{{ event.excerpt | strip_html | truncate: 100 }}</p>
-      <p class="for_click">Click to read more...</p>
-    </div>
+  <h3>{{ event.title }}</h3>
+    <span class="event-card__date">{{ event.date | date: "%d %b %Y" }}</span>
+
+    <p class="event-card__cta">Click to read more</p>
+  </div>
 
     <div class="event-card__full-content" hidden>
       {{ event.content }}

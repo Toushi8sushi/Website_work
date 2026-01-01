@@ -3,6 +3,7 @@ title: "Best G2G Poster"
 date: 2025-02-10
 poster: "assets/images/events_poster/g2g_toshith.png" 
 youtube: "https://www.youtube.com/watch?v=XXXXXXXX"
+date: 2025-01-12
 ---
 
 This is the **full event description**.

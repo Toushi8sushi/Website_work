@@ -1,0 +1,188 @@
+/* EVENTS GRID */
+.events-grid {
+  max-width: $container-max-width; // 1200px
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* EVENT CARD */
+.event-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+
+  background: #000;
+  border: 1px solid rgba($color-primary, 0.35);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.75);
+  }
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* softer readability overlay */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0)
+    );
+    z-index: 1;
+  }
+}
+/* CARD CONTENT */
+.event-card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 2;
+  padding: 1rem;
+
+  color: $color-text;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.event-card__content h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: $color-primary-dark;
+}
+
+.event-card__date {
+  font-size: 0.75rem;
+  color: $color-primary;
+  letter-spacing: 0.04em;
+}
+/* CTA — absolutely positioned to avoid layout shift */
+.event-card__cta {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $color-primary;
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.event-card:hover .event-card__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+//styling for then you click on the events card 
+.event-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 1000;
+
+  &.is-visible {
+    display: block;
+  }
+}
+
+.event-modal__header {
+  display: flex;
+  align-items: flex-start; // 🔑 prevents vertical centering gap
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.event-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(black, 0.7);
+}
+
+.event-modal__box {
+  position: relative;
+  background: $color-background;
+  max-width: 600px;
+  margin: 10vh auto;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.event-modal__box h2 {
+  margin-top: 0;
+}
+
+.event-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  line-height: 1;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+/* Kill ALL default heading spacing */
+#modalTitle {
+  margin: 0; // ← this is crucial
+  padding: 0;
+
+  line-height: 1.2;
+  font-size: 1.5rem;
+}
+
+#modalYoutube {
+  display: inline-flex !important; // force row layout
+  flex-wrap: nowrap !important; // prevent wrapping
+  align-items: center !important; // vertical center
+  gap: 0.5rem !important;
+  text-decoration: none !important;
+  font-weight: bold;
+  font-size: 16px;
+  color: $color-primary-dark;
+  cursor: pointer;
+}
+
+#modalYoutube span {
+  display: inline-block !important; // participate in flex
+  line-height: 1 !important;
+}
+
+#modalYoutube svg.event-modal__youtube-icon {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0 !important;
+  fill: #FF0000 !important;
+  display: block !important;
+  align-self: center !important; // forces vertical alignment
+}
