@@ -1,12 +1,13 @@
 ---
 layout: default
 title: Home
+hero_image: /assets/images/hero-bg.jpg
 ---
-
-<section class="hero">
+<section class="hero"
+style="background-image: url('{{ page.hero_image | relative_url }}');">
   <div class="container">
-    <h1>Welcome to Horizon's Website</h1>
-    <p class="hero-tagline">I love Andhikadai</p>
+    <h1>Welcome to Horizon!</h1>
+    <p class="hero-tagline">The Physics and Astronomy Club, IIT Madras</p>
     <div class="hero-actions">
       <a href="{{ '/about' | relative_url }}" class="btn btn-primary">Learn More</a>
       <a href="{{ '/articles' | relative_url }}" class="btn btn-secondary">Read Articles</a>
@@ -34,7 +35,7 @@ title: Home
   </div>
 </section>
 
-<section class="section section-alt">
+<!-- <section class="section section-alt">
   <div class="container">
     <h2>Recent Articles</h2>
     <div class="articles-preview">
@@ -54,7 +55,7 @@ title: Home
       <a href="{{ '/articles' | relative_url }}" class="btn btn-primary">View All Articles</a>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="section">
   <div class="container text-center">
