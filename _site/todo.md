@@ -7,3 +7,5 @@
 5. Can add a WhatsApp group/channel link in contact
 6. No need to have the "home" in the top bar maybe.
 7. Images in articles
+
+// New branch name - Vatsal_Additions

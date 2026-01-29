@@ -103,36 +103,36 @@
   }
 }
 
-.article-card {
-  padding: $spacing-lg;
-  background-color: $color-background;
-  border: 1px solid $color-border;
-  border-radius: $border-radius-lg;
-  margin-bottom: $spacing-lg;
-  transition: box-shadow $transition-base;
+// .article-card {
+//   padding: $spacing-lg;
+//   background-color: $color-background;
+//   border: 1px solid $color-border;
+//   border-radius: $border-radius-lg;
+//   margin-bottom: $spacing-lg;
+//   transition: box-shadow $transition-base;
 
-  &:hover {
-    box-shadow: $shadow-md;
-  }
+//   &:hover {
+//     box-shadow: $shadow-md;
+//   }
 
-  h3 {
-    margin-bottom: $spacing-sm;
+//   h3 {
+//     margin-bottom: $spacing-sm;
 
-    a {
-      color: $color-text;
+//     a {
+//       color: $color-text;
 
-      &:hover {
-        color: $color-primary;
-        text-decoration: none;
-      }
-    }
-  }
+//       &:hover {
+//         color: $color-primary;
+//         text-decoration: none;
+//       }
+//     }
+//   }
 
-  p {
-    color: $color-text-light;
-    margin-bottom: $spacing-md;
-  }
-}
+//   p {
+//     color: $color-text-light;
+//     margin-bottom: $spacing-md;
+//   }
+// }
 
 .article-meta {
   display: flex;
@@ -157,32 +157,32 @@
   }
 }
 
-.article-tags,
-.post-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $spacing-xs;
-  margin-bottom: $spacing-md;
-}
+// .article-tags,
+// .post-tags {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: $spacing-xs;
+//   margin-bottom: $spacing-md;
+// }
 
-.tag {
-  display: inline-block;
-  padding: $spacing-xs $spacing-sm;
-  font-size: $font-size-sm;
-  color: $color-primary;
-  background-color: rgba($color-primary, 0.1);
-  border-radius: $border-radius;
-}
+// .tag {
+//   display: inline-block;
+//   padding: $spacing-xs $spacing-sm;
+//   font-size: $font-size-sm;
+//   color: $color-primary;
+//   background-color: rgba($color-primary, 0.1);
+//   border-radius: $border-radius;
+// }
 
-.read-more {
-  font-weight: $font-weight-medium;
-  color: $color-primary;
+// .read-more {
+//   font-weight: $font-weight-medium;
+//   color: $color-primary;
 
-  &:hover {
-    text-decoration: none;
-    color: $color-primary-dark;
-  }
-}
+//   &:hover {
+//     text-decoration: none;
+//     color: $color-primary-dark;
+//   }
+// }
 
 .event-card {
   display: flex;
@@ -289,4 +289,234 @@
   color: $color-text-light;
   font-size: $font-size-sm;
   margin-top: $spacing-md;
+}
+
+.magnet-section {
+  position: relative;
+  min-height: 8vmin;   /* ← critical */
+  overflow: hidden;
+}
+
+.magnetLines-container {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.magnetLines-container span {
+  background: rgba(255,255,255,0.35); /* stronger for dark bg */
+  width: 4px;
+  height: 40px;
+  transform: rotate(var(--rotate));
+  transform-origin: center;
+  transition: transform 0.15s ease-out;
+}
+
+.magnet-content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 2rem;
+}
+
+
+/* --- The Card Container --- */
+.article-card {
+  /* Layout & Box Model */
+  display: flex;           /* Makes the card content stack vertically */
+  flex-direction: column;  /* Ensures footer stays at bottom */
+  background-color: $color-background; /* Likely white */
+  border: 1px solid rgba($color-border, 0.5); /* Thinner, subtler border */
+  border-radius: $border-radius-lg;
+  overflow: hidden;        /* Clips the image/gradient at the top */
+  position: relative;
+  
+  /* Depth & Animation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: transform $transition-base, box-shadow $transition-base;
+  
+  /* Spacing */
+  margin-bottom: $spacing-lg;
+
+  /* The "Lift" Effect on Hover */
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: transparent; /* Cleaner look on hover */
+
+    /* Animate the image inside */
+    .card-visual img {
+      transform: scale(1.05);
+    }
+
+    /* Animate the Read More Arrow */
+    .read-more .arrow {
+      transform: translateX(4px);
+    }
+  }
+}
+
+/* --- 1. The Visual Header (Image or Gradient) --- */
+.card-visual {
+  height: 200px; /* Fixed height for consistency */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: block;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills area without stretching */
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+/* Fallback Gradient Pattern (if no image) */
+.pattern-bg {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, lighten($color-primary, 20%) 0%, $color-primary 100%);
+  position: relative;
+  
+  /* Adds a subtle texture over the gradient */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.1;
+    background-image: radial-gradient(#fff 2px, transparent 2px);
+    background-size: 20px 20px;
+  }
+}
+
+/* --- 2. The Content Body --- */
+.card-body {
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes the read-more link to the bottom */
+}
+
+
+.card-meta {
+  display: flex;
+  justify-content: space-between; /* Pushes meta-group Left, tags Right */
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+
+  .author,
+  .date {
+    &::before {
+      margin-right: $spacing-xs;
+    }
+  }
+
+  .author::before {
+    content: "👤";
+  }
+
+  .date::before {
+    content: "📅";
+  }
+}
+
+
+/* New wrapper for Date + Author */
+.meta-group {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between Date, Dot, and Author */
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Title */
+.card-title {
+  margin: $spacing-xs 0 $spacing-sm 0;
+  line-height: 1.4;
+  font-size: 1.35rem; /* Slightly larger for emphasis */
+  
+  a {
+    color: $color-text;
+    text-decoration: none;
+    background: linear-gradient(to right, $color-primary, $color-primary);
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      color: $color-primary;
+      background-size: 100% 2px; /* Underline animation */
+    }
+  }
+}
+
+/* Excerpt Text */
+.card-excerpt {
+  color: lighten($color-text, 20%); /* Softer than main black */
+  margin-bottom: $spacing-lg;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+/* --- 3. Tags (Pill Style) --- */
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: $spacing-md;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap; /* Allows tags to drop to next line if there are too many */
+  justify-content: flex-end; /* Aligns tags to the right */
+  gap: 5px; /* Space between tags */
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $color-primary;
+  background-color: rgba($color-primary, 0.08);
+  border-radius: 50px; /* Perfect pill shape */
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $color-primary;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* --- 4. Read More Link --- */
+.read-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  text-decoration: none;
+  margin-top: auto; /* Pushes to bottom of flex container */
+  font-size: 0.95rem;
+
+  .arrow {
+    margin-left: 6px;
+    transition: transform 0.2s ease;
+    font-size: 1.1em;
+  }
+  
+  &:hover {
+    color: darken($color-primary, 10%);
+  }
 }

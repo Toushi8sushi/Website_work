@@ -10,12 +10,12 @@ style="background-image: url('{{ page.hero_image | relative_url }}');">
     <p class="hero-tagline">The Physics and Astronomy Club, IIT Madras</p>
     <div class="hero-actions">
       <a href="{{ '/about' | relative_url }}" class="btn btn-primary">Learn More</a>
-      <a href="{{ '/articles' | relative_url }}" class="btn btn-secondary">Read Articles</a>
+      <a href="{{ '/articles' | relative_url }}" class="btn btn-primary">Read Articles</a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="container">
     <h2>What We Do</h2>
     <div class="features-grid">
@@ -33,7 +33,52 @@ style="background-image: url('{{ page.hero_image | relative_url }}');">
       </div>
     </div>
   </div>
+</section> -->
+
+<section class="magnet-section">
+  <div
+    class="magnetLines-container"
+    data-rows="9"
+    data-columns="9"
+    data-base-angle="-10"
+  ></div>
+  <div class="magnet-content">
+    <h2>What We Do</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Technical Workshops</h3>
+        <p>
+          Regular hands-on sessions covering web development, machine learning,
+          robotics, and more.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>Project Collaboration</h3>
+        <p>
+          Work on real-world projects with fellow students and build your
+          portfolio.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>Community Events</h3>
+        <p>
+          Hackathons, tech talks, and networking opportunities with industry
+          professionals.
+        </p>
+      </div>
+    </div>
+    <div>
+    <p></p>
+    </div>
+    <div class="container text-center">
+      <h2>Join Us</h2>
+      <p>Interested in becoming part of our community? We welcome students from all technical backgrounds.</p>
+      <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Get in Touch</a>
+    </div>
+
+  </div>
 </section>
+
 
 <!-- <section class="section section-alt">
   <div class="container">
@@ -57,10 +102,10 @@ style="background-image: url('{{ page.hero_image | relative_url }}');">
   </div>
 </section> -->
 
-<section class="section">
+<!-- <section class="section">
   <div class="container text-center">
     <h2>Join Us</h2>
     <p>Interested in becoming part of our community? We welcome students from all technical backgrounds.</p>
     <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Get in Touch</a>
   </div>
-</section>
+</section> -->
