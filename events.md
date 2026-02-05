@@ -9,6 +9,10 @@ title: Events
   <div class="event-date">
     <span class="month">Jan</span>
     <span class="day">15</span>
+    <span class="weekday">Wed</span>
+  </div>
+  <div class="event-poster">
+    <img src="{{ '/assets/images/event_poster_1.jpeg' | relative_url }}" alt="Event Poster">
   </div>
   <div class="event-details">
     <h3>Web Development Workshop</h3>

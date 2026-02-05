@@ -28,12 +28,19 @@
 }
 
 .page {
-  padding: $spacing-xl 0;
+  padding: $spacing-xl $spacing-md;
+
+  width: 100%;
+  margin: 0 auto;
 
   .page-header {
     margin-bottom: $spacing-xl;
     padding-bottom: $spacing-lg;
     border-bottom: 2px solid $color-border;
+
+    max-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
 
     h1 {
       margin-bottom: 0;
@@ -43,6 +50,9 @@
 
   .page-content {
     max-width: 800px;
+
+    margin-left: auto;
+    margin-right: auto;
 
     h2 {
       margin-top: $spacing-xl;
