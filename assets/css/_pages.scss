@@ -67,6 +67,89 @@
   }
 }
 
+// .page {
+//   position: relative; /* Essential for the absolute banner to work */
+//   width: 100%;  
+//   padding: 0; 
+  
+//   .page-background {
+//     position: fixed; /* Fixes it to the window, not the parent div */
+//     top: 0;
+//     left: 0;
+//     width: 100vw;    /* 100% of Viewport Width */
+//     height: 100vh;   /* 100% of Viewport Height */
+//     z-index: -1;     /* Puts it BEHIND all content */    
+//     background-size: cover;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     /* The Gradient: Change colors to match your brand */
+//     background-image: linear-gradient(135deg, #0e1c26 0%, #2a454b 100%);
+//   }
+
+//   .container {
+//     position: relative;
+//     z-index: 1; /* sits on top of background */
+//     max-width: 800px;
+//     margin: 0 auto;
+//     padding: 0 $spacing-md; /* Keeps edges safe on mobile */
+//   }
+
+//   .page-header {
+//     text-align: center;
+//     padding-top: $spacing-2xl; /* Push title down from top of screen */
+//     padding-bottom: 80px;      /* Extra space for the card overlap */
+//     margin-bottom: 0;
+//     border-bottom: none;       /* Removed the line */
+
+//     h1 {
+//       margin-bottom: 0;
+//       color: #ffffff; /* Force white text on the dark gradient */
+//       text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Slight shadow for readability */
+//       font-size: 2.5rem;
+//     }
+//   }
+
+//   /* --- 3. The Content Card (White box) --- */
+//   .page-content {
+//     background-color: $color-background; /* Usually white */
+//     border-radius: 12px;
+//     padding: $spacing-xl; /* Padding inside the white box */
+//     box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* The "Lifted" look */
+    
+//     /* THE MAGIC: Pulls the card UP over the header */
+//     margin-top: -60px; 
+//     margin-bottom: $spacing-2xl;
+
+//     h2 {
+//       margin-top: $spacing-xl;
+//       padding-top: $spacing-md;
+//       color: $color-page-title;
+//     }
+
+//     h3 {
+//       margin-top: $spacing-lg;
+//       color: $color-page-title;
+//     }
+//   }
+
+//   /* --- Mobile Adjustments --- */
+//   @media (max-width: 768px) {
+//     .page-background {
+//       height: 250px; /* Shorter banner on phone */
+//     }
+    
+//     .page-header {
+//       padding-top: $spacing-xl;
+//       h1 { font-size: 2rem; }
+//     }
+
+//     .page-content {
+//       padding: $spacing-lg; /* Less padding inside card on phone */
+//       margin-top: -40px;    /* Less overlap on phone */
+//     }
+//   }
+// }
+
 .post {
   padding: $spacing-xl 0;
 

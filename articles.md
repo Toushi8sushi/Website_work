@@ -5,7 +5,6 @@ permalink: /articles/
 ---
 
 <div class="articles-header">
-  <!-- <h2>Knowledge Hub</h2> -->
   <p>Explore technical tutorials, hackathon recaps, and community insights.</p>
 </div>
 
