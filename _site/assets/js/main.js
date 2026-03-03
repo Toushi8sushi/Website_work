@@ -50,33 +50,89 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-const modal = document.getElementById("eventModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalContent = document.getElementById("modalContent");
-const modalYoutube = document.getElementById("modalYoutube");
-const closeModal = modal.querySelector(".event-modal__close");
 
-document.querySelectorAll(".event-card").forEach(card => {
-  card.addEventListener("click", () => {
-    modalTitle.textContent = card.dataset.title;
-    modalContent.innerHTML = card.querySelector(".event-card__full-content").innerHTML;
 
-    if (card.dataset.youtube) {
-      modalYoutube.href = card.dataset.youtube;
-      modalYoutube.style.display = "inline-block";
-    } else {
-      modalYoutube.style.display = "none";
+// Magnet cursor // // 
+document.querySelectorAll(".magnetLines-container").forEach(container => {
+  // Configuration
+  const cellSize = 90; // Size of each grid item in pixels (adjust density here)
+  const baseAngle = parseFloat(container.dataset.baseAngle || -10);
+  let spans = []; // Keep track of current spans
+
+  function createGrid() {
+    // 1. Clear existing spans to prevent duplicates on resize
+    container.innerHTML = "";
+
+    // 2. Calculate Rows/Cols based on container size
+    const width = container.offsetWidth;
+    const height = container.offsetHeight;
+    
+    // Math.ceil ensures we cover the whole area, Math.floor keeps it strict
+    const columns = Math.ceil(width / cellSize);
+    const rows = Math.ceil(height / cellSize);
+
+    // 3. Update CSS Grid
+    container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+
+    // 4. Create new spans
+    const total = rows * columns;
+    const fragment = document.createDocumentFragment(); // Performance boost
+
+    for (let i = 0; i < total; i++) {
+      const span = document.createElement("span");
+      span.style.setProperty("--rotate", `${baseAngle}deg`);
+      fragment.appendChild(span);
     }
 
-    modal.classList.add("is-visible");
+    container.appendChild(fragment);
+    
+    // 5. Update our reference to the spans
+    spans = container.querySelectorAll("span");
+  }
+
+  // --- Pointer Logic ---
+  function onPointerMove(e) {
+    spans.forEach(item => {
+      // Get position relative to viewport
+      const rect = item.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2; // Use left/top for better cross-browser
+      const centerY = rect.top + rect.height / 2;
+
+      const b = e.clientX - centerX;
+      const a = e.clientY - centerY;
+      
+      // Calculate rotation
+      const c = Math.sqrt(a * a + b * b) || 1;
+      const r = (Math.acos(b / c) * 180) / Math.PI * (e.clientY > centerY ? 1 : -1);
+
+      item.style.setProperty("--rotate", `${r}deg`);
+    });
+  }
+
+  // --- Initialization ---
+  
+  // 1. Create initial grid
+  createGrid();
+
+  // 2. Listen for mouse movement
+  window.addEventListener("pointermove", onPointerMove);
+
+  // 3. Re-calculate on resize (Debounce is recommended for performance)
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(createGrid, 200); // Wait 200ms after resize stops
   });
+  
+  // 4. Initial "waving" animation (simulate mouse at center)
+  if (spans.length) {
+    const rect = container.getBoundingClientRect();
+    onPointerMove({ 
+      clientX: rect.left + rect.width / 2, 
+      clientY: rect.top + rect.height / 2 
+    });
+  }
 });
 
-modal.querySelector(".event-modal__overlay").addEventListener("click", () => {
-  modal.classList.remove("is-visible");
-});
-
-closeModal.addEventListener("click", () => {
-  modal.classList.remove("is-visible");
-});
-
+/// //// 

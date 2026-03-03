@@ -1,20 +1,21 @@
 ---
 layout: default
 title: Home
+hero_image: /assets/images/hero-bg.jpg
 ---
-
-<section class="hero">
+<section class="hero"
+style="background-image: url('{{ page.hero_image | relative_url }}');">
   <div class="container">
-    <h1>Welcome to Horizon's Website</h1>
-    <p class="hero-tagline">I love Andhikadai</p>
+    <h1>Welcome to Horizon!</h1>
+    <p class="hero-tagline">The Physics and Astronomy Club, IIT Madras</p>
     <div class="hero-actions">
       <a href="{{ '/about' | relative_url }}" class="btn btn-primary">Learn More</a>
-      <a href="{{ '/articles' | relative_url }}" class="btn btn-secondary">Read Articles</a>
+      <a href="{{ '/articles' | relative_url }}" class="btn btn-primary">Read Articles</a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="container">
     <h2>What We Do</h2>
     <div class="features-grid">
@@ -32,9 +33,54 @@ title: Home
       </div>
     </div>
   </div>
+</section> -->
+
+<section class="magnet-section">
+  <div
+    class="magnetLines-container"
+    data-rows="9"
+    data-columns="9"
+    data-base-angle="-10"
+  ></div>
+  <div class="magnet-content">
+    <h2>What We Do</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Technical Workshops</h3>
+        <p>
+          Regular hands-on sessions covering web development, machine learning,
+          robotics, and more.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>Project Collaboration</h3>
+        <p>
+          Work on real-world projects with fellow students and build your
+          portfolio.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>Community Events</h3>
+        <p>
+          Hackathons, tech talks, and networking opportunities with industry
+          professionals.
+        </p>
+      </div>
+    </div>
+    <div>
+    <p></p>
+    </div>
+    <div class="container text-center">
+      <h2>Join Us</h2>
+      <p>Interested in becoming part of our community? We welcome students from all technical backgrounds.</p>
+      <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Get in Touch</a>
+    </div>
+
+  </div>
 </section>
 
-<section class="section section-alt">
+
+<!-- <section class="section section-alt">
   <div class="container">
     <h2>Recent Articles</h2>
     <div class="articles-preview">
@@ -54,12 +100,12 @@ title: Home
       <a href="{{ '/articles' | relative_url }}" class="btn btn-primary">View All Articles</a>
     </div>
   </div>
-</section>
+</section> -->
 
-<section class="section">
+<!-- <section class="section">
   <div class="container text-center">
     <h2>Join Us</h2>
     <p>Interested in becoming part of our community? We welcome students from all technical backgrounds.</p>
     <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Get in Touch</a>
   </div>
-</section>
+</section> -->
