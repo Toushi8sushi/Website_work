@@ -4,6 +4,8 @@ date: 2025-12-09
 poster: "assets/images/events_poster/elden_ring.png" 
 youtube: "https://www.youtube.com/watch?v=eI1dS5lntbg&list=PLWJmDtqiKt6iBTm9nuIJ3rS9hBu9_9X01&index=76"
 date: 2025-01-12
+category: G2G
+academic_year: 2025-2026
 ---
 
 I beat elden ring on this day

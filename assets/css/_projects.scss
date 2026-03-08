@@ -1,0 +1,218 @@
+//styling for projects page on the website
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-lg;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: $color-background;
+  border-radius: $border-radius-lg;
+  border: 1px solid rgba($color-border,0.5);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+
+  box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+  transition: transform $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.project-card__image {
+  height: 180px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+}
+
+.project-card__content {
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  h3 {
+    margin-bottom: $spacing-sm;
+    font-size: 1.25rem;
+  }
+
+  p {
+    color: lighten($color-text,20%);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+}
+
+.project-card__cta {
+  margin-top: $spacing-md;
+  font-weight: 600;
+  color: $color-primary;
+  font-size: 0.9rem;
+}
+
+/* ================================
+   PROJECT PAGE
+================================ */
+
+.project-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* HERO */
+
+.project-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.project-hero__image img {
+  width: 100%;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.project-hero__content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.project-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.project-excerpt {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: lighten($color-text,15%);
+  margin-bottom: 15px;
+}
+
+.project-github {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: $color-primary;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: darken($color-primary,10%);
+  }
+}
+
+/* Divider */
+
+.project-divider {
+  height: 1px;
+  background: rgba($color-border,0.4);
+  margin: 40px 0;
+}
+
+/* CONTENT */
+
+.project-content {
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+/* Section headings */
+
+.project-content h2 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid rgba($color-border,0.5);
+}
+
+.project-content h3 {
+  margin-top: 30px;
+  margin-bottom: 8px;
+}
+
+/* Paragraphs */
+
+.project-content p {
+  margin-bottom: 16px;
+  color: lighten($color-text,10%);
+}
+
+/* Lists */
+
+.project-content ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+
+  li {
+    margin-bottom: 6px;
+  }
+}
+
+/* Images */
+
+.project-content img {
+  width: 100%;
+  border-radius: $border-radius;
+  margin: 25px 0;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+/* Horizontal rules */
+
+.project-content hr {
+  border: none;
+  border-top: 1px solid rgba($color-border,0.4);
+  margin: 30px 0;
+}
+
+/* Resources list */
+
+.project-content a {
+  color: $color-primary;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .project-hero {
+    grid-template-columns: 1fr;
+  }
+
+}

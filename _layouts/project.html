@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<article class="project-page">
+
+  <header class="project-hero">
+
+    <div class="project-hero__image">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    </div>
+
+    <div class="project-hero__content">
+
+      <h1>{{ page.title }}</h1>
+
+      <div class="project-meta">
+        <span class="project-date">📅 {{ page.date | date: "%B %Y" }}</span>
+        <span class="project-author">👤 {{ page.author }}</span>
+      </div>
+
+      <p class="project-excerpt">
+        {{ page.excerpt }}
+      </p>
+
+      {% if page.tags %}
+      <div class="article-tags">
+        {% for tag in page.tags %}
+        <span class="tag-pill">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if page.github %}
+      <a href="{{ page.github }}" class="project-github" target="_blank">
+        View on GitHub →
+      </a>
+      {% endif %}
+
+    </div>
+
+  </header>
+
+  <div class="project-divider"></div>
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+
+</article>

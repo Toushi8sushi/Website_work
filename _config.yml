@@ -13,10 +13,13 @@ collections:
   posts:
     output: true
     permalink: /articles/:year/:month/:day/:title/
-  events_2025_2026:
+
+  events:
     output: false
-  past_events:
-    output: false
+    
+  projects:
+    output: true
+    permalink: /projects/:name/
 
 # Sass
 sass:

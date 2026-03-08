@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="The Physics and Astronomy Club of IIT Madras">
-  <title>About Us | Horizon</title>
+  <title>OptiQomm | Horizon</title>
   <link rel="stylesheet" href="/Website_work/assets/css/main.css">
 </head>
 
@@ -498,10 +498,11 @@ z"/>
 
       <ul class="nav-menu">
         <li><a href="/Website_work/">Home</a></li>
-        <li><a href="/Website_work/about">About</a></li>
+        <li><a href="/Website_work/projects">Projects</a></li>
         <li><a href="/Website_work/events">Events</a></li>
         <li><a href="/Website_work/articles">Articles</a></li>
         <li><a href="/Website_work/astrophotography">Astrophotography</a></li>
+        <li><a href="/Website_work/guild">Guild</a></li>
         <li><a href="/Website_work/team">Team</a></li>
         <li><a href="/Website_work/contact">Contact</a></li>
 
@@ -511,57 +512,115 @@ z"/>
 </header>
 
   <main class="main-content">
-    <article class="page">
-  <div class="container">
-    <header class="page-header">
-      <h1>About Us</h1>
-    </header>
-    <div class="page-content">
-      <h2 id="our-mission">Our Mission</h2>
+    <article class="project-page">
 
-<p>TechClub is a student-driven technical organization dedicated to fostering innovation, collaboration, and technical excellence. We provide a platform for students to explore emerging technologies, work on meaningful projects, and develop skills that extend beyond the classroom.</p>
+  <header class="project-hero">
 
-<h2 id="our-vision">Our Vision</h2>
+    <div class="project-hero__image">
+      <img src="/Website_work/assets/images/projects_data/optiqomm.png" alt="OptiQomm">
+    </div>
 
-<p>We envision a vibrant community where students from diverse backgrounds come together to learn, build, and inspire one another. Through hands-on workshops, collaborative projects, and community events, we aim to cultivate the next generation of technical leaders and innovators.</p>
+    <div class="project-hero__content">
 
-<h2 id="what-we-offer">What We Offer</h2>
+      <h1>OptiQomm</h1>
 
-<h3 id="technical-workshops">Technical Workshops</h3>
-<p>Regular sessions on cutting-edge technologies including web development, machine learning, cloud computing, cybersecurity, and more. Our workshops are designed to be practical and accessible to students at all skill levels.</p>
+      <div class="project-meta">
+        <span class="project-date">📅 February 2026</span>
+        <span class="project-author">👤 Horizon Instrumentation Team</span>
+      </div>
 
-<h3 id="project-based-learning">Project-Based Learning</h3>
-<p>Opportunities to work on real-world projects that solve actual problems. Members collaborate in teams, applying theoretical knowledge to build tangible solutions while learning industry-standard practices.</p>
+      <p class="project-excerpt">
+        A compact scintillator-based detector designed to measure atmospheric muon flux.
+      </p>
 
-<h3 id="hackathons-and-competitions">Hackathons and Competitions</h3>
-<p>Organize and participate in hackathons, coding competitions, and technical challenges. These events provide intense learning experiences and opportunities to showcase your skills.</p>
+      
+      <div class="article-tags">
+        
+        <span class="tag-pill">Instrumentation</span>
+        
+        <span class="tag-pill">Cosmic Rays</span>
+        
+      </div>
+      
 
-<h3 id="mentorship-and-guidance">Mentorship and Guidance</h3>
-<p>Connect with experienced seniors and alumni who provide mentorship, career guidance, and insights into the tech industry.</p>
-
-<h3 id="community-and-networking">Community and Networking</h3>
-<p>Build lasting connections with like-minded peers and professionals through our events, talks, and collaborative environment.</p>
-
-<h2 id="our-values">Our Values</h2>
-
-<p><strong>Collaboration</strong>: We believe in the power of working together and sharing knowledge.</p>
-
-<p><strong>Innovation</strong>: We encourage creative thinking and exploring new ideas without fear of failure.</p>
-
-<p><strong>Inclusivity</strong>: We welcome students from all backgrounds and skill levels.</p>
-
-<p><strong>Excellence</strong>: We strive for quality in everything we do, from our projects to our events.</p>
-
-<p><strong>Learning</strong>: We foster a culture of continuous learning and growth.</p>
-
-<h2 id="get-involved">Get Involved</h2>
-
-<p>Whether you’re a beginner taking your first steps in technology or an experienced developer looking to contribute, there’s a place for you in TechClub. Join us in building something amazing.</p>
+      
+      <a href="https://github.com/horizon/muon-detector" class="project-github" target="_blank">
+        View on GitHub →
+      </a>
+      
 
     </div>
-  </div>
-</article>
 
+  </header>
+
+  <div class="project-divider"></div>
+
+  <div class="project-content">
+    <h2 id="overview">Overview</h2>
+
+<p>We built a compact <strong>cosmic ray detector</strong> using plastic scintillators and silicon
+photomultipliers (SiPMs) to measure atmospheric muon flux on campus.</p>
+
+<p>The goal was to design a low-cost detector suitable for outreach demonstrations
+and long-term cosmic ray measurements.</p>
+
+<hr />
+
+<h2 id="motivation">Motivation</h2>
+
+<p>Cosmic ray muons constantly pass through the Earth’s atmosphere.
+Detecting them allows us to:</p>
+
+<ul>
+  <li>Study cosmic ray flux</li>
+  <li>Demonstrate particle detection techniques</li>
+  <li>Build affordable research instruments</li>
+</ul>
+
+<hr />
+
+<h2 id="method">Method</h2>
+
+<p>The detector consists of:</p>
+
+<ul>
+  <li>Plastic scintillator slab</li>
+  <li>Silicon photomultiplier (SiPM)</li>
+  <li>Amplifier circuit</li>
+  <li>Arduino-based data acquisition</li>
+</ul>
+
+<p>When a muon passes through the scintillator, photons are produced and detected
+by the SiPM, generating an electrical pulse that is recorded.</p>
+
+<hr />
+
+<h2 id="results">Results</h2>
+
+<p>The detector recorded an average muon rate of:</p>
+
+<p><strong>~1 muon per cm² per minute</strong>, consistent with theoretical expectations.</p>
+
+<h2 id="future-improvements">Future Improvements</h2>
+
+<ul>
+  <li>Coincidence detection with two scintillators</li>
+  <li>Temperature stabilization of SiPM</li>
+  <li>Automated data logging to cloud</li>
+</ul>
+
+<hr />
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li>GitHub Repository: <a href="https://github.com/horizon/muon-detector">Muon Detector Code</a></li>
+  <li>Related Article: <a href="https://en.wikipedia.org/wiki/Cosmic_ray">Cosmic Ray Physics</a></li>
+</ul>
+
+  </div>
+
+</article>
   </main>
 
   <footer class="site-footer">
