@@ -522,9 +522,38 @@ z"/>
   <p>Explore technical tutorials, hackathon recaps, and community insights.</p>
 </div>
 
+<div class="tag-filter-container">
+  <button class="tag-pill active" data-tag="all">All</button>
+  
+  
+  
+    <button class="tag-pill" data-tag="backend">backend</button>
+  
+    <button class="tag-pill" data-tag="beginner">beginner</button>
+  
+    <button class="tag-pill" data-tag="best-practices">best-practices</button>
+  
+    <button class="tag-pill" data-tag="events">events</button>
+  
+    <button class="tag-pill" data-tag="frontend">frontend</button>
+  
+    <button class="tag-pill" data-tag="git">git</button>
+  
+    <button class="tag-pill" data-tag="github">github</button>
+  
+    <button class="tag-pill" data-tag="hackathon">hackathon</button>
+  
+    <button class="tag-pill" data-tag="open-source">open-source</button>
+  
+    <button class="tag-pill" data-tag="recap">recap</button>
+  
+    <button class="tag-pill" data-tag="web-development">web-development</button>
+  
+</div>
+
 <div class="articles-list">
   
-    <article class="article-card scroll-element">
+    <article class="article-card scroll-element" data-tags="open-source,beginner,git,github">
       <a href="/Website_work/articles/2025/01/10/getting-started-with-open-source/" class="card-visual">
         
           <img src="/Website_work/assets/images/hero-bg.jpg" alt="Getting Started with Open Source: A Beginner's Guide" />
@@ -539,13 +568,13 @@ z"/>
           <div class="tags-list">
             
               
-                <span class="tag-pill">open-source</span>
+                <span class="tag-pill-chill">open-source</span>
               
-                <span class="tag-pill">beginner</span>
+                <span class="tag-pill-chill">beginner</span>
               
-                <span class="tag-pill">git</span>
+                <span class="tag-pill-chill">git</span>
               
-                <span class="tag-pill">github</span>
+                <span class="tag-pill-chill">github</span>
               
             
           </div>
@@ -562,7 +591,7 @@ z"/>
       </div>
     </article>
   
-    <article class="article-card scroll-element">
+    <article class="article-card scroll-element" data-tags="hackathon,events,recap">
       <a href="/Website_work/articles/2025/01/05/fall-hackathon-2024-recap/" class="card-visual">
         
           <div class="pattern-bg"></div>
@@ -577,11 +606,11 @@ z"/>
           <div class="tags-list">
             
               
-                <span class="tag-pill">hackathon</span>
+                <span class="tag-pill-chill">hackathon</span>
               
-                <span class="tag-pill">events</span>
+                <span class="tag-pill-chill">events</span>
               
-                <span class="tag-pill">recap</span>
+                <span class="tag-pill-chill">recap</span>
               
             
           </div>
@@ -598,7 +627,7 @@ z"/>
       </div>
     </article>
   
-    <article class="article-card scroll-element">
+    <article class="article-card scroll-element" data-tags="web-development,best-practices,frontend,backend">
       <a href="/Website_work/articles/2024/12/20/web-development-best-practices/" class="card-visual">
         
           <div class="pattern-bg"></div>
@@ -613,13 +642,13 @@ z"/>
           <div class="tags-list">
             
               
-                <span class="tag-pill">web-development</span>
+                <span class="tag-pill-chill">web-development</span>
               
-                <span class="tag-pill">best-practices</span>
+                <span class="tag-pill-chill">best-practices</span>
               
-                <span class="tag-pill">frontend</span>
+                <span class="tag-pill-chill">frontend</span>
               
-                <span class="tag-pill">backend</span>
+                <span class="tag-pill-chill">backend</span>
               
             
           </div>
@@ -637,6 +666,38 @@ z"/>
     </article>
   
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.tag-pill');
+  const articles = document.querySelectorAll('.article-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetTag = button.getAttribute('data-tag');
+
+      // 1. Toggle Active State on Buttons
+      filterButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tag') === targetTag);
+      });
+
+      // 2. Show/Hide Articles
+      articles.forEach(article => {
+        const articleTags = article.getAttribute('data-tags').split(',');
+        
+        if (targetTag === 'all' || articleTags.includes(targetTag)) {
+          article.style.display = ""; // Returns to default (flex/grid)
+          article.style.opacity = "1";
+        } else {
+          article.style.display = "none"; // Completely hides it
+          article.style.opacity = "0";
+        }
+      });
+    });
+  });
+});
+</script>
 
 
     </div>
@@ -658,9 +719,38 @@ z"/>
   <p>Explore technical tutorials, hackathon recaps, and community insights.</p>
 </div>
 
+<div class="tag-filter-container">
+  <button class="tag-pill active" data-tag="all">All</button>
+  
+  
+  
+    <button class="tag-pill" data-tag="backend">backend</button>
+  
+    <button class="tag-pill" data-tag="beginner">beginner</button>
+  
+    <button class="tag-pill" data-tag="best-practices">best-practices</button>
+  
+    <button class="tag-pill" data-tag="events">events</button>
+  
+    <button class="tag-pill" data-tag="frontend">frontend</button>
+  
+    <button class="tag-pill" data-tag="git">git</button>
+  
+    <button class="tag-pill" data-tag="github">github</button>
+  
+    <button class="tag-pill" data-tag="hackathon">hackathon</button>
+  
+    <button class="tag-pill" data-tag="open-source">open-source</button>
+  
+    <button class="tag-pill" data-tag="recap">recap</button>
+  
+    <button class="tag-pill" data-tag="web-development">web-development</button>
+  
+</div>
+
 <div class="articles-list">
   
-    <article class="article-card scroll-element">
+    <article class="article-card scroll-element" data-tags="open-source,beginner,git,github">
       <a href="/Website_work/articles/2025/01/10/getting-started-with-open-source/" class="card-visual">
         
           <img src="/Website_work/assets/images/hero-bg.jpg" alt="Getting Started with Open Source: A Beginner's Guide" />
@@ -675,13 +765,13 @@ z"/>
           <div class="tags-list">
             
               
-                <span class="tag-pill">open-source</span>
+                <span class="tag-pill-chill">open-source</span>
               
-                <span class="tag-pill">beginner</span>
+                <span class="tag-pill-chill">beginner</span>
               
-                <span class="tag-pill">git</span>
+                <span class="tag-pill-chill">git</span>
               
-                <span class="tag-pill">github</span>
+                <span class="tag-pill-chill">github</span>
               
             
           </div>
@@ -698,7 +788,7 @@ z"/>
       </div>
     </article>
   
-    <article class="article-card scroll-element">
+    <article class="article-card scroll-element" data-tags="hackathon,events,recap">
       <a href="/Website_work/articles/2025/01/05/fall-hackathon-2024-recap/" class="card-visual">
         
           <div class="pattern-bg"></div>
@@ -713,11 +803,11 @@ z"/>
           <div class="tags-list">
             
               
-                <span class="tag-pill">hackathon</span>
+                <span class="tag-pill-chill">hackathon</span>
               
-                <span class="tag-pill">events</span>
+                <span class="tag-pill-chill">events</span>
               
-                <span class="tag-pill">recap</span>
+                <span class="tag-pill-chill">recap</span>
               
             
           </div>
@@ -734,7 +824,7 @@ z"/>
       </div>
     </article>
   
-    <article class="article-card scroll-element">
+    <article class="article-card scroll-element" data-tags="web-development,best-practices,frontend,backend">
       <a href="/Website_work/articles/2024/12/20/web-development-best-practices/" class="card-visual">
         
           <div class="pattern-bg"></div>
@@ -749,13 +839,13 @@ z"/>
           <div class="tags-list">
             
               
-                <span class="tag-pill">web-development</span>
+                <span class="tag-pill-chill">web-development</span>
               
-                <span class="tag-pill">best-practices</span>
+                <span class="tag-pill-chill">best-practices</span>
               
-                <span class="tag-pill">frontend</span>
+                <span class="tag-pill-chill">frontend</span>
               
-                <span class="tag-pill">backend</span>
+                <span class="tag-pill-chill">backend</span>
               
             
           </div>
@@ -773,6 +863,38 @@ z"/>
     </article>
   
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.tag-pill');
+  const articles = document.querySelectorAll('.article-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetTag = button.getAttribute('data-tag');
+
+      // 1. Toggle Active State on Buttons
+      filterButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tag') === targetTag);
+      });
+
+      // 2. Show/Hide Articles
+      articles.forEach(article => {
+        const articleTags = article.getAttribute('data-tags').split(',');
+        
+        if (targetTag === 'all' || articleTags.includes(targetTag)) {
+          article.style.display = ""; // Returns to default (flex/grid)
+          article.style.opacity = "1";
+        } else {
+          article.style.display = "none"; // Completely hides it
+          article.style.opacity = "0";
+        }
+      });
+    });
+  });
+});
+</script>
 
 
     </div>
